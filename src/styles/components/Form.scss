@@ -1,0 +1,39 @@
+.Form {
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+  background: linear-gradient(to top, crimson, rgb(133, 114, 114));
+  justify-content: space-around;
+  color: white;
+  border-radius: 10px;
+  padding: 25px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  input {
+    width: 100%;
+    border: none;
+    height: 26px;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    padding: 3px;
+    background: rgba(255, 255, 255, 0.747);
+  }
+  input:focus {
+    outline: none;
+  }
+  button {
+    width: 100%;
+    border: none;
+    height: 26px;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+  }
+  .registrar {
+    margin-top: 16px;
+  }
+}
