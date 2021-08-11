@@ -1,0 +1,2 @@
+# AuthFirebaseVanilla
+AuthFirebaseVanilla
