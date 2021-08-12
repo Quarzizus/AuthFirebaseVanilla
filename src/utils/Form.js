@@ -5,6 +5,7 @@ const Form = () => {
   const formData = {
     email: null,
     password: null,
+    name: null,
   };
 
   // handleChange
@@ -19,6 +20,18 @@ const Form = () => {
     await firebase
       .auth()
       .createUserWithEmailAndPassword(formData.email, formData.password);
+
+    const config = {
+      url: "http://localhost:8080/",
+    };
+    const user = firebase.auth().currentUser;
+
+    await user.updateProfile({
+      displayName: formData.name,
+    });
+
+    await user.sendEmailVerification(config);
+    await firebase.auth().signOut();
   });
   // Login
   document.querySelector(".login").addEventListener("click", async (e) => {
@@ -27,11 +40,27 @@ const Form = () => {
       .auth()
       .signInWithEmailAndPassword(formData.email, formData.password);
   });
-  // Login with google
+  // Login with Google
   document.querySelector(".google").addEventListener("click", (e) => {
     e.preventDefault();
     const provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithPopup(provider);
+    firebase
+      .auth()
+      .signInWithPopup(provider)
+      .then((result) => {
+        console.log(result.user);
+      });
+  });
+  // Login with Github
+  document.querySelector(".github").addEventListener("click", (e) => {
+    e.preventDefault();
+    const provider = new firebase.auth.GithubAuthProvider();
+    firebase
+      .auth()
+      .signInWithPopup(provider)
+      .then((result) => {
+        console.log(result.user);
+      });
   });
 };
 

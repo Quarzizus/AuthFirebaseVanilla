@@ -1,4 +1,3 @@
-// import fc from "../firebaseConfig";
 import firebase from "firebase";
 import "firebase/auth";
 

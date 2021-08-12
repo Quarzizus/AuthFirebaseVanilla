@@ -14,7 +14,7 @@ import "./styles/containers/index.scss";
       app.innerHTML = FormView();
       Form();
     } else {
-      app.innerHTML = HeroView(user.email);
+      app.innerHTML = HeroView(user.displayName, user.photoURL);
       Hero();
     }
   });
